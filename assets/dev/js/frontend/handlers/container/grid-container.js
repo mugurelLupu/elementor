@@ -56,8 +56,10 @@ export default class GridContainer extends elementorModules.frontend.handlers.Ba
 		}
 
 		if ( 'grid' !== editor?.options?.editedElementView?.container?.parent?.model?.attributes?.settings?.attributes?.container_type ) {
-			const partialMatches = document.querySelectorAll( '[class*="elementor-control-grid_row"]' );
-
+			const partialMatches = [
+				...editor?.el.querySelectorAll('[class*="elementor-control-_grid_row"]'),
+				...editor?.el.querySelectorAll('[class*="elementor-control-_grid_column"]')
+			];
 			partialMatches.forEach( element => {
 				element.style.display = 'none';
 			} );
