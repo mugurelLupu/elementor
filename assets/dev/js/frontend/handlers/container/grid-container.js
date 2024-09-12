@@ -57,8 +57,9 @@ export default class GridContainer extends elementorModules.frontend.handlers.Ba
 
 		if ( 'grid' !== editor?.options?.editedElementView?.container?.parent?.model?.attributes?.settings?.attributes?.container_type ) {
 			const partialMatches = [
-				...editor?.el.querySelectorAll('[class*="elementor-control-_grid_row"]'),
-				...editor?.el.querySelectorAll('[class*="elementor-control-_grid_column"]')
+				...editor?.el.querySelectorAll( '[class*="elementor-control-_heading_grid"]' ),
+				...editor?.el.querySelectorAll( '[class*="elementor-control-_grid_row"]' ),
+				...editor?.el.querySelectorAll( '[class*="elementor-control-_grid_column"]' )
 			];
 			partialMatches.forEach( element => {
 				element.style.display = 'none';
